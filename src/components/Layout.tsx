@@ -60,7 +60,7 @@ const Sidebar = ({ activePage, setActivePage, isOpen, setIsOpen }: SidebarProps)
         animate={isMobile ? { x: isOpen ? 0 : '-100%' } : { x: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
         className={cn(
-          "fixed top-0 left-0 h-full w-[270px] z-50 flex flex-col lg:translate-x-0 lg:static",
+          "fixed top-0 left-0 h-screen w-[270px] z-50 flex flex-col lg:translate-x-0 lg:static",
           "lg:transform-none"
         )}
         style={{
@@ -97,7 +97,7 @@ const Sidebar = ({ activePage, setActivePage, isOpen, setIsOpen }: SidebarProps)
         </div>
 
         {/* Nav */}
-        <nav className="relative z-10 flex-1 px-4 space-y-1 overflow-y-auto pb-4">
+        <nav className="relative z-10 px-4 space-y-1 pb-4">
           {menuItems.map((item) => {
             const isActive = activePage === item.id;
             return (
@@ -144,7 +144,7 @@ const Sidebar = ({ activePage, setActivePage, isOpen, setIsOpen }: SidebarProps)
         </nav>
 
         {/* Bottom */}
-        <div className="relative z-10 p-4">
+        <div className="relative z-10 p-4 mt-auto">
           {/* User card */}
           <div className="rounded-xl overflow-hidden mb-3" style={{
             background: 'linear-gradient(135deg, rgba(139,92,246,0.2) 0%, rgba(139,92,246,0.05) 100%)',
